@@ -1,0 +1,264 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.mainBody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    background-color: #3498DB;
+}
+
+header {
+    background-color: #3498DB;
+    color: #fff;
+    padding: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.hero-section {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap to the next line if there's not enough space */
+    justify-content: space-around;
+    align-items: center;
+    padding: 60px;
+    padding-top: 100px;
+    background-color: #6fd499;
+    color: #333;
+}
+
+.hero-content {
+width: 50%;
+}
+
+.hero-image {
+width: 35%;
+text-align: right;
+/* padding-right: 30px; */
+}
+
+img {
+max-width: 100%;
+height: auto;
+}
+
+.slogan {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    font-family: 'Pacifico', cursive;
+    text-align: justify;
+}
+
+.shop-now-button {
+display: inline-block;
+padding: 15px 30px;
+background-color: #fff;
+color: #007bff;
+text-decoration: none;
+font-size: 1.5em;
+border-radius: 5px;
+transition: background-color 0.3s ease;
+}
+
+.shop-now-button:hover {
+    background-color: #ddd;
+}
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.big-button {
+    position: relative;
+    margin: 10px;
+    padding: 39px;
+    width: 200px;
+    font-size: 20px;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.big-button:hover {
+    background-color: #555;
+}
+
+.big-button1 {
+    position: relative;
+    margin: 10px;
+    padding: 39px;
+    width: 200px;
+    font-size: 20px;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.big-button1:hover {
+    background-color: #555;
+}
+
+
+.big-button1:before {
+    content: 'Coming Soon';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    color: #fff;
+    background-color: #E74C3C;
+    transition: opacity 0.3s ease;
+  }
+
+.big-button1:hover:before {
+    opacity: 1;
+  }
+
+.product {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 15px;
+    background-color: #fff;
+    text-align: center;
+}
+
+button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#cart {
+    background-color: #eee;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.category{
+    padding: 10px;
+}
+.card-container {
+display: flex;
+flex-wrap: wrap; /* Allows cards to wrap to the next line if there's not enough space */
+justify-content: space-around; /* Adjust as needed to control spacing between cards */
+}
+
+.card {
+  border: 1px solid #ddd; /* Border for the card */
+  border-radius: 10px; /* Rounded corners for a softer look */
+  padding: 10px; /* Padding inside the card */
+  margin: 10px; /* Margin around each card */
+}
+
+.card-image {
+  width: 100%; /* Make sure the image fills the container */
+  max-width: 200px; /* Set a maximum width for the image */
+  height: auto; /* Maintain the aspect ratio while scaling width */
+  border: 2px solid #3498db; /* Border color for the image */
+  border-radius: 8px; /* Rounded corners for the image */
+  overflow: hidden; /*/* Optional: Adds space between image and description */
+}
+
+.card-description {
+  font-size: 14px; /* Adjust the font size as needed */
+  color: #333; /* Text color for the description */
+}
+
+
+@media only screen and (max-width: 767px) {
+    nav {
+        flex-direction: row; /* Switch back to horizontal layout for mobile */
+    }
+
+    nav a {
+        margin: 0 10px; /* Adjust margin for mobile nav links */
+    }
+
+    .hero-section {
+        padding: 10px; /* Adjust padding for mobile */
+    }
+
+    .hero-content,
+    .hero-image {
+        width: 100%; /* Full width for mobile */
+        text-align: center;
+    }
+
+    .slogan {
+        font-size: 1em; /* Adjust font size for mobile */
+    }
+
+    .shop-now-button {
+        padding: 10px 15px; /* Adjust padding for mobile */
+        font-size: 1em; /* Adjust font size for mobile */
+    }
+
+    .mainBody{
+        padding-left: 10px;
+    }
+    .big-button,
+    .big-button1 {
+        width: 100%; /* Full width for mobile */
+        padding: 15px; /* Adjust padding for mobile */
+        font-size: 16px; /* Adjust font size for mobile */
+    }
+
+    .product {
+        margin: 10px 0; /* Add space between products in mobile */
+    }
+
+    #cart {
+        margin-top: 10px; /* Adjust margin for mobile */
+    }
+
+    /* .card {
+        width: 100%; /* Full width for mobile */
+        /* margin: 10px 0; 
+    } */
+}

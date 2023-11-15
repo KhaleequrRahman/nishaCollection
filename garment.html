@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple E-commerce</title>
+  <link rel="stylesheet" href="src/style.css">
+  <script src="src/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div>
+        <h1>Nisha Collection</h1>
+      </div>
+      <div>
+        <a href="./index.html">Home</a>
+        <a href="./index.html#mainBody">Products</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <div id="garments" class="category">
+    <h2 class="categoryHeading">Garments</h2>
+    
+    <div id="card-container" class="card-container"></div>
+  </div>
+
+
+  <script>
+    // Sample data for cards
+    const cardData = [
+      { image: 'src\\bottom\\image_1.jpg', description: 'Description for Image 1' },
+      { image: 'src\\bottom\\image_2.jpg', description: 'Description for Image 2' },
+      { image: 'src\\bottom\\image_3.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_4.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_5.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_6.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_7.jpg', description: 'Description for Image 1' },
+      { image: 'src\\bottom\\image_8.jpg', description: 'Description for Image 2' },
+      { image: 'src\\bottom\\image_9.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_10.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_11.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_12.jpg', description: 'Description for Image 1' },
+      { image: 'src\\bottom\\image_13.jpg', description: 'Description for Image 2' },
+      { image: 'src\\bottom\\image_14.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_15.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_16.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_17.jpg', description: 'Description for Image 1' },
+      { image: 'src\\bottom\\image_18.jpg', description: 'Description for Image 2' },
+      { image: 'src\\bottom\\image_19.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_20.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_21.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_22.jpg', description: 'Description for Image 1' },
+      { image: 'src\\bottom\\image_23.jpg', description: 'Description for Image 2' },
+      { image: 'src\\bottom\\image_24.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_25.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_26.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_27.jpg', description: 'Description for Image 1' },
+      { image: 'src\\bottom\\image_28.jpg', description: 'Description for Image 2' },
+      { image: 'src\\bottom\\image_29.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_30.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_31.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_32.jpg', description: 'Description for Image 1' },
+      { image: 'src\\bottom\\image_33.jpg', description: 'Description for Image 2' },
+      { image: 'src\\bottom\\image_34.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_35.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_36.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_37.jpg', description: 'Description for Image 1' },
+      { image: 'src\\bottom\\image_38.jpg', description: 'Description for Image 2' },
+      { image: 'src\\bottom\\image_39.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_40.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_41.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_42.jpg', description: 'Description for Image 1' },
+      { image: 'src\\bottom\\image_43.jpg', description: 'Description for Image 2' },
+      { image: 'src\\bottom\\image_44.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_45.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_46.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_47.jpg', description: 'Description for Image 1' },
+      { image: 'src\\bottom\\image_48.jpg', description: 'Description for Image 2' },
+      { image: 'src\\bottom\\image_49.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_50.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_51.jpg', description: 'Description for Image 3' },
+      { image: 'src\\bottom\\image_52.jpg', description: 'Description for Image 1' },
+      { image: 'src\\bottom\\image_53.jpg', description: 'Description for Image 2' },
+      { image: 'src\\bottom\\image_54.jpg', description: 'Description for Image 3' },
+      
+      // Add more data as needed
+    ];
+
+    // Function to create a card
+    function createCard(image, description) {
+      const cardContainer = document.getElementById('card-container');
+
+      const card = document.createElement('div');
+      card.className = 'card';
+
+      const cardImage = document.createElement('img');
+      cardImage.src = image;
+      cardImage.alt = 'Card Image';
+      cardImage.className = 'card-image';
+
+      const cardDescription = document.createElement('p');
+      cardDescription.textContent = description;
+      cardDescription.className = 'card-description';
+
+      card.appendChild(cardImage);
+      card.appendChild(cardDescription);
+
+      cardContainer.appendChild(card);
+    }
+
+    // Loop through the card data and create cards
+    cardData.forEach(card => {
+      createCard(card.image, card.description);
+    });
+  </script>
+</body>
+</html>

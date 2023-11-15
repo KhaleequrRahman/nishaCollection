@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple E-commerce</title>
+  <link rel="stylesheet" href="src/style.css">
+  <script src="src/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div>
+        <h1>Nisha Collection</h1>
+      </div>
+      <div>
+        <a href="./index.html">Home</a>
+        <a href="./index.html#mainBody">Products</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <div id="garments" class="category">
+    <h2>Cleaning supplies</h2>
+    
+    <div id="card-container" class="card-container"></div>
+  </div>
+
+
+  <script>
+    // Sample data for cards
+    const cardData = [
+      { image: 'src\\broom\\image_1.jpg', description: 'Description for Image 1' },
+      { image: 'src\\broom\\image_2.jpg', description: 'Description for Image 2' },
+      { image: 'src\\broom\\image_3.jpg', description: 'Description for Image 3' },
+      { image: 'src\\broom\\image_4.jpg', description: 'Description for Image 3' },
+      { image: 'src\\broom\\image_5.jpg', description: 'Description for Image 3' },
+      { image: 'src\\broom\\image_6.jpg', description: 'Description for Image 3' },
+      { image: 'src\\broom\\image_7.jpg', description: 'Description for Image 1' },
+      { image: 'src\\broom\\image_8.jpg', description: 'Description for Image 2' },
+      { image: 'src\\broom\\image_9.jpg', description: 'Description for Image 3' },
+      { image: 'src\\broom\\image_10.jpg', description: 'Description for Image 3' },
+      { image: 'src\\broom\\image_11.jpg', description: 'Description for Image 3' },
+      { image: 'src\\broom\\image_12.jpg', description: 'Description for Image 1' },
+      { image: 'src\\broom\\image_13.jpg', description: 'Description for Image 2' },
+      { image: 'src\\broom\\image_14.jpg', description: 'Description for Image 3' },
+      { image: 'src\\broom\\image_15.jpg', description: 'Description for Image 3' },
+      { image: 'src\\broom\\image_16.jpg', description: 'Description for Image 3' },
+      { image: 'src\\broom\\image_17.jpg', description: 'Description for Image 1' },
+      { image: 'src\\broom\\image_18.jpg', description: 'Description for Image 2' },
+      { image: 'src\\broom\\image_19.jpg', description: 'Description for Image 3' },
+      { image: 'src\\broom\\image_20.jpg', description: 'Description for Image 3' },
+      { image: 'src\\broom\\image_21.jpg', description: 'Description for Image 3' },
+      { image: 'src\\broom\\image_22.jpg', description: 'Description for Image 1' },
+      { image: 'src\\broom\\image_23.jpg', description: 'Description for Image 2' },
+      { image: 'src\\broom\\image_24.jpg', description: 'Description for Image 3' },
+      
+      // Add more data as needed
+    ];
+
+    // Function to create a card
+    function createCard(image, description) {
+      const cardContainer = document.getElementById('card-container');
+
+      const card = document.createElement('div');
+      card.className = 'card';
+
+      const cardImage = document.createElement('img');
+      cardImage.src = image;
+      cardImage.alt = 'Card Image';
+      cardImage.className = 'card-image';
+
+      const cardDescription = document.createElement('p');
+      cardDescription.textContent = description;
+      cardDescription.className = 'card-description';
+
+      card.appendChild(cardImage);
+      card.appendChild(cardDescription);
+
+      cardContainer.appendChild(card);
+    }
+
+    // Loop through the card data and create cards
+    cardData.forEach(card => {
+      createCard(card.image, card.description);
+    });
+  </script>
+</body>
+</html>
