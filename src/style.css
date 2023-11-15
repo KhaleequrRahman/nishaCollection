@@ -7,6 +7,10 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+.logo{
+    width: 80px;
+    height: auto;
+}
 .mainBody{
     display: flex;
     flex-direction: column;
@@ -212,12 +216,18 @@ justify-content: space-around; /* Adjust as needed to control spacing between ca
 
 
 @media only screen and (max-width: 767px) {
+    .logo{
+        width: 50px;
+        height: auto;
+    }
     nav {
-        flex-direction: row; /* Switch back to horizontal layout for mobile */
+        display: block;
+        /* flex-direction: row; Switch back to horizontal layout for mobile */
     }
 
     nav a {
         margin: 0 10px; /* Adjust margin for mobile nav links */
+        align-items: end;
     }
 
     .hero-section {
