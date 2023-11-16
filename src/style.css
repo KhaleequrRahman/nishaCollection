@@ -238,15 +238,14 @@ justify-content: space-around; /* Adjust as needed to control spacing between ca
     .hero-image {
         width: 100%; /* Full width for mobile */
         text-align: center;
+        padding-top: 15px;
+        
     }
 
-    .slogan {
-        font-size: 1em; /* Adjust font size for mobile */
-    }
 
     .shop-now-button {
-        padding: 10px 15px; /* Adjust padding for mobile */
-        font-size: 1em; /* Adjust font size for mobile */
+        padding: 15px 20px; /* Adjust padding for mobile */
+        font-size: 1.5em; /* Adjust font size for mobile */
     }
 
     .mainBody{
